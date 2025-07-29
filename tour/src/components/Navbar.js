@@ -23,7 +23,7 @@ function Navbar() {
       <ul className="nav-menu">
         <li><a onClick={() => scrollToSection('about')} style={{ cursor: 'pointer' }}>About</a></li>
         <li><a onClick={() => scrollToSection('Programs')} style={{ cursor: 'pointer' }}>Programs</a></li>
-        <li><a onClick={() => scrollToSection('Experience')} style={{ cursor: 'pointer' }}>Experience</a></li>
+        <li><a onClick={() => scrollToSection('experience')} style={{ cursor: 'pointer' }}>Experience</a></li>
         <li><a onClick={() => scrollToSection('Contact')} style={{ cursor: 'pointer' }}>Contact</a></li>
       </ul>
     </nav>

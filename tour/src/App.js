@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
 import About from './components/About';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
+import Experience from './components/Experience';
+import Programs from './components/Programs';
 import IntroAnimation from './components/IntroAnimation';
+import Skills from './components/Contact';
+
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './App.css';
@@ -24,8 +26,9 @@ function App() {
           <Navbar />
           <Header />
           <About />
+          <Programs />
+          <Experience />
           <Skills />
-          <Projects />
         </>
       )}
     </div>
