@@ -12,10 +12,13 @@ header h1 {
   letter-spacing: 2px;
 }
 
+
+hea
 header p {
   margin-top: 10px;
   font-size: 1.2rem;
 }
+
 
 section {
   max-width: 800px;
@@ -82,7 +85,7 @@ footer {
 .nav-brand {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #F97316;
+  color: #609067;
   letter-spacing: 1px;
 }
 
@@ -105,7 +108,7 @@ footer {
 }
 
 .nav-menu a:hover {
-  color: #F97316;
+  color: #609067;
 }
 
 .nav-menu a::after {
@@ -115,7 +118,7 @@ footer {
   bottom: -2px;
   width: 0;
   height: 2px;
-  background: #F97316;
+  background: #609067;
   transition: width 0.3s;
 }
 
@@ -130,7 +133,7 @@ footer {
   gap: 2rem;
   min-height: 350px;
   padding: 60px 4vw 40px 4vw;
-  background: #F97316;
+  background: #609067;
 }
 
 .header-content {
@@ -182,4 +185,349 @@ footer {
   0% { opacity: 1; }
   50% { opacity: 0; }
   100% { opacity: 1; }
+}
+
+/* 인트로 애니메이션 스타일 */
+.intro-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #609067 0%, #FACC15 50%, #609067 100%);
+  background-size: 400% 400%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.8s ease-in, gradientShift 3s ease-in-out infinite;
+  overflow: hidden;
+}
+
+.intro-animation::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.1) 100%);
+  pointer-events: none;
+}
+
+.intro-content {
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+.lottie-container {
+  margin-bottom: 30px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.intro-text {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 0.5s forwards;
+}
+
+.brand-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin: 0 0 15px 0;
+  letter-spacing: 4px;
+  text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  background: linear-gradient(45deg, #ffffff, #FACC15);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.welcome-text {
+  font-size: 1.3rem;
+  margin: 0 0 20px 0;
+  opacity: 0.9;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.loading-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.loading-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+  animation: bounce 1.4s ease-in-out infinite both;
+}
+
+.loading-dots span:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.loading-dots span:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+.fade-out-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.1);
+  animation: fadeOut 1.5s ease-out forwards;
+  z-index: 3;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  from {
+    filter: drop-shadow(0 0 5px rgba(255,255,255,0.5));
+  }
+  to {
+    filter: drop-shadow(0 0 20px rgba(250,204,21,0.8));
+  }
+}
+
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* 로딩 플레이스홀더 스타일 */
+.loading-placeholder {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* About 페이지 스타일 */
+.about-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 24px;
+}
+
+.about-title {
+  text-align: center;
+  margin-bottom: 50px;
+  line-height: 1.3;
+}
+
+.about-title .highlight {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #609067 0%, #FACC15 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.about-title .subtitle {
+  font-size: 1.5rem;
+  color: #666;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.about-description {
+  margin-top: 40px;
+}
+
+.main-text {
+  font-size: 1.3rem;
+  text-align: center;
+  color: #609067;
+  font-style: italic;
+  margin-bottom: 50px;
+  padding: 20px;
+  background: rgba(96, 144, 103, 0.05);
+  border-left: 4px solid #609067;
+  border-radius: 0 8px 8px 0;
+}
+
+.experience-highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.highlight-item {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(96, 144, 103, 0.1);
+}
+
+.highlight-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(96, 144, 103, 0.15);
+}
+
+.highlight-item .icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.highlight-content h3 {
+  color: #609067;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.highlight-content p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.why-matcha {
+  background: linear-gradient(135deg, rgba(96, 144, 103, 0.05) 0%, rgba(250, 204, 21, 0.05) 100%);
+  padding: 40px;
+  border-radius: 20px;
+  margin-top: 40px;
+}
+
+.why-title {
+  color: #609067;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.why-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 15px;
+}
+
+.why-list li {
+  background: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  color: #555;
+  font-weight: 500;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border-left: 3px solid #FACC15;
+  transition: transform 0.2s ease;
+}
+
+.why-list li:hover {
+  transform: translateX(5px);
+  background: rgba(250, 204, 21, 0.05);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .about-title .highlight {
+    font-size: 2.2rem;
+  }
+  
+  .about-title .subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .main-text {
+    font-size: 1.1rem;
+  }
+  
+  .experience-highlights {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .why-list {
+    grid-template-columns: 1fr;
+  }
 } 

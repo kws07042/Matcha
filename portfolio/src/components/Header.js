@@ -5,13 +5,14 @@ function Header() {
   useEffect(() => {
     const typed = new Typed('.typed', {
       strings: [
-        '안녕하세요!',
-        '건영입니다!',
-        '프론트엔드 공부 중이에요'
+        '수확부터 다도까지,',
+'차 한 잎의 여정을 걷는 시간',
+'당신만의 말차 이야기를 만들어 보세요.'
+
       ],
-      typeSpeed: 100,
-      backSpeed: 50,
-      backDelay: 2000,
+      typeSpeed: 80,
+      backSpeed: 40,
+      backDelay: 1000,
       loop: true,
       showCursor: true,
       cursorChar: '|',
@@ -26,13 +27,14 @@ function Header() {
   return (
     <header className="header">
       <div className="header-content">
-        <h1>Hi, I am Geon</h1>
+        <h1>한 잎의 정성, 한 잔의 기억</h1>
+
         <div className="typing-container">
           <span className="typed"></span>
         </div>
       </div>
       <dotlottie-player
-        src="https://lottie.host/96c08111-ef72-432b-a056-0ff1469cf6b6/Cv7wOO5IAb.lottie"
+        src="https://lottie.host/d5655b5f-e69c-4447-9697-6722897616f5/Ud1k1H1JD0.lottie"
         background="transparent"
         speed="1"
         style={{ width: '300px', height: '300px' }}
